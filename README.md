@@ -1,2 +1,2 @@
 # registration_users
-Registration users for tamplates on Django
+Registration users with tamplates on Django

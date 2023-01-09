@@ -16,5 +16,5 @@ def about(request):
     return HttpResponse("Pagina sobre")
 
 def contact(request, id):
-    return HttpResponse("Pagina de Contato")
+    return HttpResponse(id)
  

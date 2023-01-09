@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -10,3 +11,10 @@ def index(request):
          "email": "borgesbsb.dev@gmail.com"
     }
     return render(request,'index.html', {'nome_empresa': nome_da_empresa,'descricao':descricao, 'contato_empresa':contato_empresa} )
+
+def about(request):
+    return HttpResponse("Pagina sobre")
+
+def contact(request, id):
+    return HttpResponse("Pagina de Contato")
+ 

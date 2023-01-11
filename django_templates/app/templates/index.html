@@ -93,18 +93,21 @@
                     <h2 class="fw-bolder">Pay as you grow</h2>
                     <p class="lead mb-0">With our no hassle pricing plans</p>
                 </div>
-                {% for curso in cursos_home %}
-                <p> {{ curso.descricao }} </p>   
-               {% endfor %}
+                
+                
                 <div class="row gx-5 justify-content-center">
                     <!-- Pricing card free-->
-                   
+                    {% for curso_id, curso in cursos_home.items %}   
                     <div class="col-lg-6 col-xl-4">
                         <div class="card mb-5 mb-xl-0">
                             <div class="card-body p-5">
-                                <div class="small text-uppercase fw-bold text-muted">aaa</div>
+                                {% ifequal curso.titulo "Django Fundamentos" %}
+                                    <h2>{{curso.titulo}} </h2>
+                                {% else %}
+                                    <div class="small text-uppercase fw-bold text-muted">{{ curso_id }} - {{curso.titulo}}</div>
+                                {% endifequal %}
                                 <div class="mb-3">
-                                    <span class="display-4 fw-bold">bbb</span>
+                                    <span class="display-4 fw-bold">Free</span>
                                     <span class="text-muted"></span>
                                 </div>
                                 <ul class="list-unstyled mb-4">
@@ -145,7 +148,9 @@
                             </div>
                         </div>
                     </div>
-                    
+                    {% empty %}
+                    <h3>Novos Cursos Serão Lançados</h3>
+                    {% endfor %}     
                     <!-- Pricing card pro-->
                    
                 </div>

@@ -19,8 +19,8 @@ def index(request):
     return render(request,'index.html', {'nome_empresa': nome_da_empresa,'descricao':descricao, 'contato_empresa':contato_empresa, 'cursos_home':cursos_home, } )
 
 def about(request):
-    return HttpResponse("Pagina sobre")
+    return render(request,'empresa/about.html')
 
 def contact(request, id):
-    return HttpResponse(id)
+    return render(request,'empresa/contact.html')
  

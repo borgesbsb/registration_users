@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
 {% load meus_filtros %}
-{% extends './empresa/base.html'%}
 
 <html lang="en">
     <head>
@@ -34,13 +33,16 @@
                 </div>
             </div>
         </nav>
-        {% block header %}
-        {% include './empresa/includes/header.html' %}
-        {% endblock header %}
-        {% block conteudo %}
-        {% endblock conteudo %}
+      {% block header %}
+      {%endblock header %}
+        <!-- Features section-->
+        <div class="cotainer px-5 ">
         
-       
+            {% block conteudo %}
+            {% endblock conteudo %}
+        
+        </div>
+            
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy;{{ nome_empresa }} {% now "Y" as current_year  %} {{ current_year }}</p></div>

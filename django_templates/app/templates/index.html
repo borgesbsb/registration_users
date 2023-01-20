@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-{% load static %}
+{% extends 'empresa/base.html' %}
 {% load meus_filtros %}
+{% block header %}
+{% include  'empresa/includes/header.html' with titulo='OiEuVimDOIndex' descricao='Sou um projeto Teste' %}
+{% endblock header %}
+{% load static %}
+
 
 
 <html lang="en">
